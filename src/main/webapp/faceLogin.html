@@ -84,12 +84,19 @@
         'Thanks for logging in, ' + response.name + '!';
     });
   }
+  
+      FB.logout(function(response) {
+        // Person is now logged out
+    });
 </script>
 
 <!--
   Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
+
+This is the permissions page
+https://developers.facebook.com/docs/facebook-login/login-flow-for-web/v2.2
 Add 
 user_events
 when this is approved
