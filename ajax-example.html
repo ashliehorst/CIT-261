@@ -1,90 +1,129 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Assignment 4</title>
-    <link href="../main.css" rel="stylesheet" type="text/css">
-    <!-- I changed the font family and the font size for each -->
-    <style type="text/css">
-      a:link {
-      color: #FF6600;
-      font-family:arial
-      }
-      a:visited {
-      color: #FF944C;
-      font-family:arial
-      }
-      a:hover, a:active, a:focus {
-      color: #7F3300;
-      text-decoration: underline;
-      font-family:arial
-      }
-      footer {
-      clear: left;
-      padding-top: 2px;
-      padding-bottom: 2px;
-      padding-left: 2%;
-      background-color: #1C5368;
-      color: #FFFFFF;
-      font-family:arial}
-      .size {
-      font-size: 14px
-      }
-    </style>
-  </head>
+<head>
+   <title> Assignment 9 </title>
+   <link href="../main.css" rel="stylesheet" type="text/css">
+   <script type = "text/javascript">
+      var xmlhttp;
+      function loadXMLDoc(countries)
+      {
+         xmlhttp = null;
+         if (countries=="")
+         { 
+            document.getElementById("myDiv").innerHTML="";
+            return;
+         }
+         if (window.XMLHttpRequest)
+         {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+         }
+         else if (window.ActiveXObject)
+	 {
+	    xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+	 }
+	 if (xmlhttp != null)
+	 {
+	    xmlhttp.onreadystatechange=state_Change;
+	    xmlhttp.open("GET", "http://157.201.194.254/~ercanbracks/" + countries, true);
+	    xmlhttp.send(null);
+	 }
+	 else 
+	 {
+	    alert("Your browser does not support XMLHTTP.");
+	 }
+      }   
 
-  <!-- Top of page with links -->
-  <body>
-    <div id="wrapper">
-      <header id="top">
-        <h1>Ashlie's Photography</h1>
+      function state_Change()
+      {
+         if (xmlhttp.readyState==4)
+	 {
+            if (xmlhttp.status==200)
+            {	
+               document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+	      // alert("Everything is ok");
+            }
+	    else
+	       alert("Are you using the right link?");
+	 }  
+      }
+
+      function loadDoc() 
+      {
+	 var url = document.getElementById("urlInput").value;
+         if (window.XMLHttpRequest)
+         {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+         }
+         else if (window.ActiveXObject)
+	 {
+	    xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+	 }
+	 if (xmlhttp != null)
+	 {
+	    xmlhttp.onreadystatechange=state_Add;
+	    xmlhttp.open("GET", url, true);
+	    xmlhttp.send(null);
+	 }
+	 else 
+	 {
+	    alert("Your browser does not support XMLHTTP.");
+	 }
+      }
+
+      function state_Add()
+      {
+         if (xmlhttp.readyState==4)
+	 {
+            if (xmlhttp.status==200)
+            {	
+               document.getElementById("urlDiv").innerHTML=xmlhttp.responseText;
+            }
+	    else
+	       alert("Are you using a correct URL?");
+	 }  
+      }
+
+      function newPage() 
+      {
+	  document.getElementById("validPage").style.visibility = "visible";
+      }
+      
+   </script>
+</head>
+
+<body>
+   <div id = "wrapper" style = "text-align:center">
+   <header id="top">
+   <h1>Ajax</h1>
         <nav id="mainnav">
           <ul>
-            <li><a href="assign04.html" class="thispage">Home</a></li>
-            <li><a href="assign041.html">Request Form</a></li>
-            <li><a href="assign042.html">Gallery</a></li>
+            <li><a href="../../index.html" class="thispage">Home</a></li>
             <li><a href="../../assign02.html">CS213 Assignments</a></li>
+	    <li><a href="http://www.w3schools.com/ajax/">Learn Ajax</a></li>
+            <li><a href="http://www.w3schools.com/php/">Plan Ahead</a></li>
             <li></li>
           </ul>
         </nav>
-      </header>
+      </header></br>
+   <h2>Pick a country</h2>
+   <select name = "countries" style = "font-size: 16px" onchange="loadXMLDoc(this.value)">
+      <option value = "">Pick a country</option>
+      <option value = "mexico.txt"> Mexico </option>
+      <option value = "usa.txt"> USA </option>
+      <option value = "canada.txt"> Canada </option>
+      <option value = "russia.txt"> Russia </option>   
+   </select>
+   <div>
+	<br/><textarea id="myDiv" rows ="10" cols ="30"> </textarea>
+   </div><br/>
+   
 
-      <div id="here">
-        <article>
-          <h2>Be Inspired</h2>
-          <p>Pause the Precious Moments</p>
-        </article>
-        <img src="images/picture4.JPG"  
-             alt="Green Hedge"/> 
-      </div>
-
-      <article id="main">
-        <h2>Contact Me</h2>
-        <p class = "size">Having a special event?</p>
-        <p>Send a message and set up an appointment.</p>
-        <figure class="centered">
-          <img src="images/picture10.jpg" width="400" height="266"  alt=""/>
-          <figcaption>Nature Sample Picture</figcaption>
-        </figure>    
-        <p>Contact me for more information by filling out the 
-          <a href="assign041.html">request form</a>. </p>
-      </article>
-
-      <aside id="sidebar">
-        <h2>Request Photographs</h2>
-        <figure class="centered">
-          <img src="images/picture11.jpg" width="300" height="200"  alt=""/>
-          <figcaption>Floral Sample Picture</figcaption>
-        </figure>
-        <p>"You can capture all these things in the still form of photographs; 
-          forever beautiful."</p>
-        <p>You can request a photgrapher, order pictures, and more. </p>
-      </aside>
-
-      <footer>
-        <p>&copy; Ashlie's Photography, Inc.</p>
-      </footer>
-
-    </div>
-  </body>
+   <h2>Insert a URL</h2>
+   <input type ="text" id ="urlInput" value ="">
+   <button type="button"  onclick="loadDoc(); newPage()">Load URL</button><br/>
+   <span id = "validPage" style = "visibility: hidden"><hr/></span>
+   <div id= "urlDiv"></div></br>
+   <div>
+</body>
 </html>
+
