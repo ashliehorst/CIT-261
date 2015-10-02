@@ -1,51 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title> Assignment 9 </title>
+   <title>Ajax Example</title>
    <link href="../main.css" rel="stylesheet" type="text/css">
    <script type = "text/javascript">
-      var xmlhttp;
-      function loadXMLDoc(countries)
-      {
-         xmlhttp = null;
-         if (countries=="")
-         { 
-            document.getElementById("myDiv").innerHTML="";
-            return;
-         }
-         if (window.XMLHttpRequest)
-         {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp=new XMLHttpRequest();
-         }
-         else if (window.ActiveXObject)
-	 {
-	    xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
-	 }
-	 if (xmlhttp != null)
-	 {
-	    xmlhttp.onreadystatechange=state_Change;
-	    xmlhttp.open("GET", "http://157.201.194.254/~ercanbracks/" + countries, true);
-	    xmlhttp.send(null);
-	 }
-	 else 
-	 {
-	    alert("Your browser does not support XMLHTTP.");
-	 }
-      }   
-
-      function state_Change()
-      {
-         if (xmlhttp.readyState==4)
-	 {
-            if (xmlhttp.status==200)
-            {	
-               document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-	      // alert("Everything is ok");
-            }
-	    else
-	       alert("Are you using the right link?");
-	 }  
-      }
+      var xmlhttp; 
 
       function loadDoc() 
       {
