@@ -7,6 +7,7 @@
 
       function loadDoc() 
       {
+      	// Get the url that the user specifies
 	 var url = document.getElementById("urlInput").value;
          if (window.XMLHttpRequest)
          {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -18,9 +19,7 @@
 	 }
 	 if (xmlhttp != null)
 	 {// If the xmlhttp has not been assigned a value by now, the browser is not supported
-	 // This is where AJAX comes in. When it is ready, 
-	 //   it will call the assign the value from the state_add function
-	 //   and open it with a get request.
+	 // The state_add function is called and if the url is good, it will continue and open the page
 	    xmlhttp.onreadystatechange=state_Add;
 	    xmlhttp.open("GET", url, true);
 	    xmlhttp.send(null);
@@ -39,6 +38,7 @@
 	 // A status of 200 means that it is ok. 404 means that it is not found. 500 means there is a server error.
             if (xmlhttp.status==200)
             {	
+            	// This fills the div with the url
                document.getElementById("urlDiv").innerHTML=xmlhttp.responseText;
             }
 	    else
@@ -46,13 +46,6 @@
 	 }  
       }
 
-      function newPage() 
-      {
-      	// Now that everything is ready and validated, show the hr tag and the page
-      	//   (I added it just for fun, but it is not necessary)
-	  document.getElementById("validPage").style.visibility = "visible";
-      }
-      
    </script>
 </head>
 
@@ -64,8 +57,7 @@
      
    <h2>Insert a URL such as https://www.facebook.com/</h2>
    <input type ="text" id ="urlInput" value ="">
-   <button type="button"  onclick="loadDoc(); newPage()">Load URL</button><br/>
-   <span id = "validPage" style = "visibility: hidden"><hr/></span>
+   <button type="button"  onclick="loadDoc()">Load URL</button><br/>
    <div id= "urlDiv"></div></br>
    <div>
 </body>
