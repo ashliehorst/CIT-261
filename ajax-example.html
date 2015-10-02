@@ -13,11 +13,14 @@
             xmlhttp=new XMLHttpRequest();
          }
          else if (window.ActiveXObject)
-	 {
+	 {// code for anything other than the ones stated above (older versions on IE)
 	    xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
 	 }
 	 if (xmlhttp != null)
-	 {
+	 {// If the xmlhttp has not been assigned a value by now, the browser is not supported
+	 // This is where AJAX comes in. When it is ready, 
+	 //   it will call the assign the value from the state_add function
+	 //   and open it with a get request.
 	    xmlhttp.onreadystatechange=state_Add;
 	    xmlhttp.open("GET", url, true);
 	    xmlhttp.send(null);
@@ -30,8 +33,10 @@
 
       function state_Add()
       {
+      	// There are different states. When it reaches state 4, that means it is ready
          if (xmlhttp.readyState==4)
 	 {
+	 // A status of 200 means that it is ok. 404 means that it is not found. 500 means there is a server error.
             if (xmlhttp.status==200)
             {	
                document.getElementById("urlDiv").innerHTML=xmlhttp.responseText;
@@ -43,6 +48,8 @@
 
       function newPage() 
       {
+      	// Now that everything is ready and validated, show the hr tag and the page
+      	//   (I added it just for fun, but it is not necessary)
 	  document.getElementById("validPage").style.visibility = "visible";
       }
       
