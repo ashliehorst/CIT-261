@@ -1,0 +1,59 @@
+<!--  
+
+JSON syntax is derived from JavaScript object notation syntax:
+
+Data is in name/value pairs (i.e. "firstName":"John")
+Data is separated by commas
+Curly braces hold objects
+Square brackets hold arrays
+
+
+JSON values can be:
+
+A number (integer or floating point)
+A string (in double quotes)
+A Boolean (true or false)
+An array (in square brackets)
+An object (in curly braces)
+null
+
+http://www.w3schools.com/json/tryit.asp?filename=tryjson_objectarray
+ -->
+ 
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>How to create a JavaScript object array.</p>
+<p>If you have an array of objects, this is a good way to show it</p>
+
+<p id="demo"></p>
+
+<script>
+var employees = [
+    {
+    "firstName":"John",
+    "lastName":"Doe"
+    }, 
+    {
+    "firstName":"Anna",
+    "lastName":"Smith"
+    },
+    {
+    "firstName":"Peter",
+    "lastName":"Jones"
+    }
+];
+
+// I added this for loop to go through the values
+//   using i instead of using 0-2
+for(i=0; i < employees.length; i++)
+{
+   document.getElementById("demo").innerHTML +=
+   employees[i].firstName + " " + employees[i].lastName + "<br/>";
+
+}
+</script>
+
+</body>
+</html>
