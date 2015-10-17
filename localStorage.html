@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Storage Example</title>
+  <script type="text/javascript">
+  function pageLoadCounter() {
+    if (!localStorage.getItem('loadCounter')) {
+      localStorage.setItem('loadCounter', 0);
+    }
+
+    localStorage.setItem('loadCounter', parseInt(localStorage.getItem('loadCounter')) + 1);
+    document.getElementById('counter').innerHTML = localStorage.getItem('loadCounter');
+  }
+  </script>
+</head>
+<body onload="pageLoadCounter()">
+  <h1>Local Storage</h1>
+  <form id="form1">
+    <p>You have viewed this page <span id="counter"></span> times.</p>
+    <p><input type="button" class="button2" onClick="location.reload()" value="Reload Page"><br />
+       <input type="button" class="button2" onClick="localStorage.clear(); location.reload()" value="Clear Storage"></p>
+  </form>
+  <p>If you close the tab or browser the counter(local storage) will persist when you open the page again.</p>
+</body>
+</html>
