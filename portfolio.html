@@ -1,43 +1,32 @@
 <!DOCTYPE html>
+<html>
+<body>
 
-<head>
-<script type="text/javascript">
-// http://www.w3schools.com/json/tryit.asp?filename=tryjson_http
-function fetchJSONFile() {
-	
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = function() {
-        if (httpRequest.readyState == 4) {
-            alert(httpRequest.status);
-            if (httpRequest.status == 200) {
-                var data = JSON.parse(httpRequest.responseText);
-                myFunction(myArr);
-            }
-        }
-    };
-    
-    var path = "workouts.txt";
-    httpRequest.open('GET', path);
-    httpRequest.send(); 
+<div id="id01"></div>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "workouts.txt";
+
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var myArr = JSON.parse(xmlhttp.responseText);
+        myFunction(myArr);
+    }
 }
-    
-    function myFunction(arr) {
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(arr) {
     var out = "";
     var i;
     for(i = 0; i < arr.length; i++) {
         out += '<a href="' + arr[i].url + '">' + 
         arr[i].display + '</a><br>';
     }
-    document.getElementById("result").innerHTML = out;
+    document.getElementById("id01").innerHTML = out;
 }
-
 </script>
-</head>
 
-<body>
-<h1>test</h1>
-<div id="result"> </div>
-<button onclick="fetchJSONFile()">Button</button>
 </body>
-
 </html>
