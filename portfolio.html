@@ -20,7 +20,7 @@ xmlhttp.send();
 function myFunction(myArr) {
     var out = "<select name = \"workout\" style = \"font-size: 16px\" onchange=\"workoutChange(this.value)\">";
     var i;
-    for(i = 0; i < arr.length; i++) {
+    for(i = 0; i < myArr.length; i++) {
         out += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
     }
     out += "</select>";
