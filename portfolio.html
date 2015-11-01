@@ -11,13 +11,24 @@ function fetchJSONFile() {
             alert(httpRequest.status);
             if (httpRequest.status == 200) {
                 var data = JSON.parse(httpRequest.responseText);
-                alert("here");
+                myFunction(myArr);
             }
         }
     };
-    var path = "workouts.json";
+    
+    var path = "workouts.txt";
     httpRequest.open('GET', path);
     httpRequest.send(); 
+}
+    
+    function myFunction(arr) {
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += '<a href="' + arr[i].url + '">' + 
+        arr[i].display + '</a><br>';
+    }
+    document.getElementById("result").innerHTML = out;
 }
 
 </script>
