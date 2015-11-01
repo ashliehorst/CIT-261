@@ -3,6 +3,7 @@
 <body>
 <p>So far I just have it going through a file and changing the workout type depending on the day.</p>
 <p>Using AJAX and JSON with another file</p>
+<p>I want to use Animation and Transitions to make this look nice</p>
 <div id="id01"></div></br>
 <div id="workoutDay"></div>
 <script>
@@ -20,6 +21,7 @@ xmlhttp.send();
 
 function myFunction(myArr) {
     var out = "<select name = \"workout\" style = \"font-size: 16px\" onchange=\"workoutChange(this.value)\">";
+    out += "<option value =''>Choose Day</option>";
     var i;
     for(i = 0; i < myArr.length; i++) {
         out += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
