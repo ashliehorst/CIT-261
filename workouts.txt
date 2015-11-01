@@ -1,39 +1,27 @@
 
 [
 {
-"display": "HTML Tutorial",
-"url": "http://www.w3schools.com/html/default.asp"
+"display": "Monday",
+"day": "Arm Day"
 },
 {
-"display": "CSS Tutorial",
-"url": "http://www.w3schools.com/css/default.asp"
+"display": "Tuesday",
+"day": "Leg Day"
 },
 {
-"display": "JavaScript Tutorial",
-"url": "http://www.w3schools.com/js/default.asp"
+"display": "Wednesday",
+"day": "Back Day"
 },
 {
-"display": "jQuery Tutorial",
-"url": "http://www.w3schools.com/jquery/default.asp"
+"display": "Thursday",
+"day": "Chest Day"
 },
 {
-"display": "JSON Tutorial",
-"url": "http://www.w3schools.com/json/default.asp"
+"display": "Friday",
+"day": "Ab Day"
 },
 {
-"display": "AJAX Tutorial",
-"url": "http://www.w3schools.com/ajax/default.asp"
-},
-{
-"display": "SQL Tutorial",
-"url": "http://www.w3schools.com/sql/default.asp"
-},
-{
-"display": "PHP Tutorial",
-"url": "http://www.w3schools.com/php/default.asp"
-},
-{
-"display": "XML Tutorial",
-"url": "http://www.w3schools.com/xml/default.asp"
+"display": "Saturday",
+"day": "Shoulder/Cardio Day"
 }
 ]
