@@ -17,11 +17,11 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
-function myFunction(arr) {
+function myFunction(myArr) {
     var out = "<select name = \"workout\" style = \"font-size: 16px\" onchange=\"workoutChange(this.value)\">";
     var i;
     for(i = 0; i < arr.length; i++) {
-        out += "<option value ='" + i + "'>" + arr[i].display + "</option>";
+        out += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
     }
     out += "</select>";
     document.getElementById("id01").innerHTML = out;
@@ -29,7 +29,7 @@ function myFunction(arr) {
 
 function workoutChange(value){
     var out = "";
-    document.getElementById("workoutDay").innerHTML = arr[value].day;
+    document.getElementById("workoutDay").innerHTML = myArr[value].day;
 }
 </script>
 
