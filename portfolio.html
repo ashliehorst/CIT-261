@@ -7,10 +7,10 @@
 <script>
 var xmlhttp = new XMLHttpRequest();
 var url = "workouts.txt";
-
+var myArr;
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var myArr = JSON.parse(xmlhttp.responseText);
+        myArr = JSON.parse(xmlhttp.responseText);
         myFunction(myArr);
     }
 }
