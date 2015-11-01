@@ -3,7 +3,7 @@
 <body>
 
 <div id="id01"></div>
-
+<div id="workoutDay"></div>
 <script>
 var xmlhttp = new XMLHttpRequest();
 var url = "workouts.txt";
@@ -24,6 +24,11 @@ function myFunction(arr) {
         out += '<h2>' + arr[i].display + '</h2>' + '<p>' + arr[i].day + '</p></br>';
     }
     document.getElementById("id01").innerHTML = out;
+}
+
+function workoutChange(){
+    var out = "";
+    document.getElementById("workoutDay").innerHTML = arr[1].day;
 }
 </script>
 
