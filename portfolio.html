@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+<script type="text/javascript">
+
+function fetchJSONFile() {
+	
+    var httpRequest = new XMLHttpRequest();
+    alert(httpRequest);
+    httpRequest.onreadystatechange = function() {
+    	alert(httpRequest.readyState);
+        if (httpRequest.readyState == 4) {
+        	alert("here1");
+            if (httpRequest.status == 200) {
+            	alert("here2");
+                var data = JSON.parse(httpRequest.responseText);
+                alert(data.title);
+            }
+        }
+    };
+    var path = "workouts.json";
+    httpRequest.open('GET', path);
+    httpRequest.send(); 
+}
+
+</script>
+</head>
+
+<body>
+<h1>test</h1>
+<div id="result"> </div>
+<button onclick="fetchJSONFile()">Button</button>
+</body>
+
+</html>
