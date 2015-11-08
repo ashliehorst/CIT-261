@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Ashlie's Portfolio</title>
+  <link href="main.css" rel="stylesheet" type="text/css"> 
   <script>
 var xmlhttp = new XMLHttpRequest();
 var url = "workouts.txt";
@@ -40,6 +42,19 @@ function pageLoadCounter() {
   </script>
 </head>
 <body onload="pageLoadCounter()">
+  <div id="wrapper">
+    <header>
+        <h1>Ashlie's Portfolio</h1>
+        <nav id="mainnav">
+          <ul>
+            <li><a href="index.html" class="thispage">Home</a></li>
+            <li><a href="https://plus.google.com/u/0/communities/101743908998928032718">Community</a></li>
+            <li><a href="https://www.linkedin.com/pub/ashlie-horst/96/808/65">LinkedIn</a></li>
+            <li><a href="http://www.byui.edu/">BYU-Idaho</a></li>
+            <li></li>
+          </ul>
+        </nav>
+    </header>
     <p>Using AJAX and JSON with another file</p>
     <p>I want to use Animation and Transitions to make this look nice</p>
     <p>Local storage for check-ins with JS onload</p>
@@ -47,6 +62,6 @@ function pageLoadCounter() {
 <div id="workoutDay"></div>
 <p>You are on a <span id="counter"></span> check-in streak. Keep it up!</p>
 
-
+  </div> <!-- wrapper -->
 </body>
 </html>
