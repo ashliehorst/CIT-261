@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html>
-<body>
-<p>So far I just have it going through a file and changing the workout type depending on the day.</p>
-<p>Using AJAX and JSON with another file</p>
-<p>I want to use Animation and Transitions to make this look nice</p>
-<div id="id01"></div></br>
-<div id="workoutDay"></div>
-<script>
+<head>
+  <script>
 var xmlhttp = new XMLHttpRequest();
 var url = "workouts.txt";
 var myArr;
@@ -34,7 +29,24 @@ function workoutChange(value){
     var out = "";
     document.getElementById("workoutDay").innerHTML = myArr[value].day;
 }
-</script>
+
+function pageLoadCounter() {
+    if (!localStorage.getItem('loadCounter')) {
+      localStorage.setItem('loadCounter', 0);
+    }
+    localStorage.setItem('loadCounter', parseInt(localStorage.getItem('loadCounter')) + 1);
+    document.getElementById('counter').innerHTML = localStorage.getItem('loadCounter');
+  }
+  </script>
+</head>
+<body onload="pageLoadCounter()">
+    <p>Using AJAX and JSON with another file</p>
+    <p>I want to use Animation and Transitions to make this look nice</p>
+    <p>This week I added local storage for check-ins</p>
+<div id="id01"></div></br>
+<div id="workoutDay"></div>
+<p>You are on a <span id="counter"></span> check-in streak. Keep it up!</p>
+
 
 </body>
 </html>
