@@ -24,7 +24,7 @@ function myFunction(myArr) {
     }
     out += "</select>"; */
     var out;
-    out = myArr.workout[0].day;
+    out = myArr.workout[0].day + " " + myArr.workout[0].exercise[0];
     document.getElementById("id01").innerHTML = out;
 }
 function workoutChange(value){
