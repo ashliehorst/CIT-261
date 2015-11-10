@@ -5,7 +5,7 @@
   <link href="main.css" rel="stylesheet" type="text/css"> 
   <script>
 var xmlhttp = new XMLHttpRequest();
-var url = "workouts.txt";
+var url = "workout.txt";
 var myArr;
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -24,7 +24,7 @@ function myFunction(myArr) {
     }
     out += "</select>"; */
     var out;
-    out = myArr[0].display;
+    out = myArr[0].workout[0].day;
     document.getElementById("id01").innerHTML = out;
 }
 function workoutChange(value){
