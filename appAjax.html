@@ -17,14 +17,13 @@ xmlhttp.open("GET", url, true);
 xmlhttp.send();
 function myFunction(myArr) {
    // var out = "<select name = \"workout\" style = \"font-size: 16px\" onchange=\"workoutChange(this.value)\">";
-   // out += "<option value =''>Choose Day</option>";
-    var i;
-/*for(i = 0; i < myArr.length; i++) {
-        out += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
-    }
-    out += "</select>"; */
     var out;
-    out = myArr.workout[0].day + " " + myArr.workout[0].exercise[0];
+    var i;
+    for(i = 0; i < myArr.workout.length; i++) {
+        out += "<br/>" + myArr.workout[i].day;
+        for(var j = 0; i < myArr.workout.exercise.length; j++)
+          out += "<br/>" + myArr.workout[i].exercise[j];
+    }
     document.getElementById("id01").innerHTML = out;
 }
 function workoutChange(value){
