@@ -16,13 +16,15 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 function myFunction(myArr) {
-    var out = "<select name = \"workout\" style = \"font-size: 16px\" onchange=\"workoutChange(this.value)\">";
-    out += "<option value =''>Choose Day</option>";
+   // var out = "<select name = \"workout\" style = \"font-size: 16px\" onchange=\"workoutChange(this.value)\">";
+   // out += "<option value =''>Choose Day</option>";
     var i;
-    for(i = 0; i < myArr.length; i++) {
+/*for(i = 0; i < myArr.length; i++) {
         out += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
     }
-    out += "</select>";
+    out += "</select>"; */
+    var out;
+    out = myArr[0].display;
     document.getElementById("id01").innerHTML = out;
 }
 function workoutChange(value){
