@@ -19,11 +19,13 @@ function myFunction(myArr) {
    // var out = "<select name = \"workout\" style = \"font-size: 16px\" onchange=\"workoutChange(this.value)\">";
     var out;
     var i;
+    alert(myArr.workout.length);
     for(i = 0; i < myArr.workout.length; i++) {
         out += "<br/>" + myArr.workout[i].day;
         for(var j = 0; i < myArr.workout.exercise.length; j++)
           out += "<br/>" + myArr.workout[i].exercise[j];
     }
+   // out = myArr.workout[0].day + " " + myArr.workout[0].exercise[0];
     document.getElementById("id01").innerHTML = out;
 }
 function workoutChange(value){
