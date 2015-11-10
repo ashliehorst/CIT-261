@@ -20,7 +20,7 @@ function myFunction(myArr) {
     out += "<option value =''>Choose Day</option>";
     var i;
     for(i = 0; i < myArr.length; i++) {
-        out += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
+        out +=  myArr[i].day + myArr[i].exercise;
     }
     out += "</select>";
     document.getElementById("id01").innerHTML = out;
