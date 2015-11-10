@@ -8,6 +8,7 @@ var xmlhttp = new XMLHttpRequest();
 var url = "workout.json";
 var myArr;
 xmlhttp.onreadystatechange = function() {
+  alert("on ready");
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         myArr = JSON.parse(xmlhttp.responseText);
         myFunction(myArr);
@@ -16,6 +17,7 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 function myFunction(myArr) {
+   alert("in my function");
     var out = "";
     var i;
     alert(myArr.workout.length);
