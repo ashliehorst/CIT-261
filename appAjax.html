@@ -18,10 +18,11 @@ xmlhttp.send();
 function myFunction(myArr) {
     var out = "";
     var i;
+    alert(myArr.workout.length);
     for(i = 0; i < myArr.workout.length; i++) {
-        out +=  "<h1>" + myArr.workout[i].day + "</h1>" + myArr.workout.day[i].exercise;
+        out +=  "<h1>" + myArr.workout[i].day + "</h1>" + myArr.workout[i].exercise[0];
     }
-    out += <br/>"<h1>" + myArr.workout[0].day + "</h1>" + myArr.workout[0].day[0].exercise;
+    out += <br/>"<h1>" + myArr.workout[0].day + "</h1>" + myArr.workout[0].exercise[0];
     document.getElementById("id01").innerHTML = out;
 }
 function workoutChange(value){
