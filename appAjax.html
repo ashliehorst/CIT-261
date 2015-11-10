@@ -20,8 +20,8 @@ function myFunction(myArr) {
     for(var i = 0; i < myArr.workout.length; i++) {
         out += "<br/>" + myArr.workout[i].day + "<ul>";
       for(var j = 0; j < myArr.workout[i].exercise.length; j++)
-          out += "<li>" + myArr.workout[i].exercise[j] + </li>;
-      out += "</ul>"
+          out += "<li>" + myArr.workout[i].exercise[j] + "</li>";
+      out += "</ul>";
     }
    // out = myArr.workout[0].day + " " + myArr.workout[0].exercise[0];
     document.getElementById("id01").innerHTML = out;
