@@ -19,7 +19,7 @@ function myFunction(myArr) {
     var out = "";
     var i;
     for(i = 0; i < myArr.length; i++) {
-        out +=  "<h1>" + myArr[i].workout.day + "</h1>" + myArr[i].exercise;
+        out +=  "<h1>" + myArr.workout[i].day + "</h1>" + myArr.workout.day[i].exercise;
     }
     document.getElementById("id01").innerHTML = out;
 }
