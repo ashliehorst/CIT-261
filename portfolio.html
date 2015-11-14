@@ -20,8 +20,8 @@ xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
 function myFunction(myArr) {
-   // var out = "<select name = \"workout\" style = \"font-size: 16px\" onchange=\"workoutChange(this.value)\">";
-   // out += "<option value =''>Choose Day</option>";
+    var preout = "<select name = \"workout\" style = \"font-size: 16px\" onchange=\"workoutChange(this.value)\">";
+    preout += "<option value =''>Choose Day</option>";
    var out = "";
     var i;
     for(i = 0; i < myArr.length; i++) {
@@ -31,10 +31,13 @@ function myFunction(myArr) {
       out +=      "<h3 class='ca-sub'>" + myArr[i].day + "</h3>";
       out +=  "</div>";
       out += "</li>";
-       // out += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
+       
     }
-   // out += "</select>";
-    document.getElementById("id01").innerHTML = out;
+    for(i = 0; i < myArr.length; i++) {
+       preout += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
+    }
+    preout += "</select>";
+    document.getElementById("id01").innerHTML = out + preout;
 }
 
 function workoutChange(value){
@@ -66,15 +69,14 @@ function pageLoadCounter() {
         </nav>
     </header>
     <p>Using AJAX and JSON with another file</p>
-    <p>I want to use Animation and Transitions to make this look nice</p>
+    <p>Added Animation and Transitions to make this look nice <br/>
+    The previous one is listed still below</p>
     <p>Local storage for check-ins with JS onload</p></br>
-<div id="workoutDay"></div>
 <p>You are on a <span id="counter"></span> check-in streak. Keep it up!</p>
-
         <div class="content">
-                <ul class="ca-menu" id="id01">
-                </ul>
+                <ul class="ca-menu" id="id01"></ul>
         </div><!-- content -->
+        <div id="workoutDay"></div>
   </div> <!-- wrapper -->
 </body>
 </html>
