@@ -54,8 +54,10 @@ function pageLoadCounter() {
   }
   
   function domManip() {
+    alert("here");
     var currWeight = document.getElementById("currWeight").value;
     var goalWeight = document.getElementById("goalWeight").value;
+    alert(currWeight + goalWeight);
     var weightLose = currWeight - goalWeight;
     var node = document.createElement("LI");
     var textnode = document.createTextNode(weightLose + " lbs to go!");
@@ -84,14 +86,14 @@ function pageLoadCounter() {
     <p>Local storage for check-ins with JS onload</p>
     <p>Using DOM to change content</p>
     <p>Using loops, functions, variables</p>
+    <p>Dom manipulation createElement, appendChild, etc.</p><br/>
 <p>You are on a <span id="counter"></span> check-in streak. Keep it up!</p><br/>
 
 Enter Current Weight: <input type="text" id="currWeight"><br>
 Enter Goal Weight: <input type="text" id="goalWeight"><br>
-<input type="submit" value="Submit" onclick"domManip()">
+<button value="Submit" onclick"domManip()">
 
 <ul id="myWeightList">
-
 </ul>
 
 
