@@ -52,6 +52,16 @@ function pageLoadCounter() {
     localStorage.setItem('loadCounter', parseInt(localStorage.getItem('loadCounter')) + 1);
     document.getElementById('counter').innerHTML = localStorage.getItem('loadCounter');
   }
+  
+  function domManip() {
+    var currWeight = document.getElementById("currWeight");
+    var goalWeight = document.getElementById("goalWeight");
+    var weightLose = currWeight - goalWeight;
+    var node = document.createElement("LI");
+    var textnode = document.createTextNode(weightLose + " lbs to go!");
+    node.appendChild(textnode);
+    document.getElementById("myWeightList").appendChild(node);
+}
   </script>
 </head>
 <body onload="pageLoadCounter()">
@@ -71,8 +81,20 @@ function pageLoadCounter() {
     <p>Using AJAX and JSON with another file</p>
     <p>Added Animation and Transitions to make this look nice <br/>
     The previous one is listed still below</p>
-    <p>Local storage for check-ins with JS onload</p></br>
-<p>You are on a <span id="counter"></span> check-in streak. Keep it up!</p>
+    <p>Local storage for check-ins with JS onload</p>
+    <p>Using DOM to change content</p>
+    <p>Using loops, functions, variables</p>
+<p>You are on a <span id="counter"></span> check-in streak. Keep it up!</p><br/>
+
+Enter Current Weight: <input type="text" id="currWeight" value="Mickey"><br>
+Enter Goal Weight: <input type="text" id="goalWeight" value="Mouse"><br>
+<input type="submit" value="Submit" onclick"domManip()">
+
+<ul id="myWeightList">
+
+</ul>
+
+
         <div class="content">
                 <ul class="ca-menu" id="id01"></ul>
         </div><!-- content -->
