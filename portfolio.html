@@ -54,8 +54,8 @@ function pageLoadCounter() {
   }
   
   function domManip() {
-    var currWeight = document.getElementById("currWeight");
-    var goalWeight = document.getElementById("goalWeight");
+    var currWeight = document.getElementById("currWeight").value;
+    var goalWeight = document.getElementById("goalWeight").value;
     var weightLose = currWeight - goalWeight;
     var node = document.createElement("LI");
     var textnode = document.createTextNode(weightLose + " lbs to go!");
@@ -86,8 +86,8 @@ function pageLoadCounter() {
     <p>Using loops, functions, variables</p>
 <p>You are on a <span id="counter"></span> check-in streak. Keep it up!</p><br/>
 
-Enter Current Weight: <input type="text" id="currWeight" value="Mickey"><br>
-Enter Goal Weight: <input type="text" id="goalWeight" value="Mouse"><br>
+Enter Current Weight: <input type="text" id="currWeight"><br>
+Enter Goal Weight: <input type="text" id="goalWeight"><br>
 <input type="submit" value="Submit" onclick"domManip()">
 
 <ul id="myWeightList">
