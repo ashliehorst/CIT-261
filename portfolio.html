@@ -38,7 +38,7 @@ function myFunction(myArr) {
       out +=  "</div>";
       out += "</li>";
     }
-    document.getElementById("id01").innerHTML = out + preout;
+    document.getElementById("id01").innerHTML = preout + out;
 }
 
 function workoutChange(value){
@@ -55,10 +55,8 @@ function pageLoadCounter() {
   }
   
   function domManip() {
-    alert("here");
     var currWeight = document.getElementById("currWeight").value;
     var goalWeight = document.getElementById("goalWeight").value;
-    alert(currWeight + goalWeight);
     var weightLose = currWeight - goalWeight;
     var node = document.createElement("LI");
     var textnode = document.createTextNode(weightLose + " lbs to go!");
@@ -94,8 +92,8 @@ Enter Current Weight: <input type="text" id="currWeight"><br>
 Enter Goal Weight: <input type="text" id="goalWeight"><br>
 <button onclick="domManip()">Submit</button>
 
-  <ul id="myWeightList"></ul>
-  <div id="workoutDay"></div>
+  <ul id="myWeightList"></ul><br/>
+  <div id="workoutDay"></div><br/>
     <div class="content">
         <ul class="ca-menu" id="id01"></ul>
     </div><!-- content -->
