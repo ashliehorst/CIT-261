@@ -24,6 +24,12 @@ function myFunction(myArr) {
     preout += "<option value =''>Choose Day</option>";
    var out = "";
     var i;
+    
+    for(i = 0; i < myArr.length; i++) {
+       preout += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
+    }
+    preout += "</select>";
+    
     for(i = 0; i < myArr.length; i++) {
       out += "<li>";
       out +=  "<div class='ca-content'>";
@@ -31,12 +37,7 @@ function myFunction(myArr) {
       out +=      "<h3 class='ca-sub'>" + myArr[i].day + "</h3>";
       out +=  "</div>";
       out += "</li>";
-       
     }
-    for(i = 0; i < myArr.length; i++) {
-       preout += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
-    }
-    preout += "</select>";
     document.getElementById("id01").innerHTML = out + preout;
 }
 
@@ -91,16 +92,13 @@ function pageLoadCounter() {
 
 Enter Current Weight: <input type="text" id="currWeight"><br>
 Enter Goal Weight: <input type="text" id="goalWeight"><br>
-<button onclick"domManip()">Submit</button>
+<button onclick="domManip()">Submit</button>
 
-<ul id="myWeightList">
-</ul>
-
-
-        <div class="content">
-                <ul class="ca-menu" id="id01"></ul>
-        </div><!-- content -->
-        <div id="workoutDay"></div>
+  <ul id="myWeightList"></ul>
+  <div id="workoutDay"></div>
+    <div class="content">
+        <ul class="ca-menu" id="id01"></ul>
+    </div><!-- content -->
   </div> <!-- wrapper -->
 </body>
 </html>
