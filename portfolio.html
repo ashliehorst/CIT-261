@@ -17,13 +17,20 @@ xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
 function myFunction(myArr) {
-    var out = "<select name = \"workout\" style = \"font-size: 16px\" onchange=\"workoutChange(this.value)\">";
-    out += "<option value =''>Choose Day</option>";
+   // var out = "<select name = \"workout\" style = \"font-size: 16px\" onchange=\"workoutChange(this.value)\">";
+   // out += "<option value =''>Choose Day</option>";
+   var out = "";
     var i;
     for(i = 0; i < myArr.length; i++) {
-        out += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
+      out += "<li>";
+      out +=  "<div class='ca-content'>";
+      out +=      "<h2 class='ca-main'>" + myArr[i].display + "</h2>";
+      out +=      "<h3 class='ca-sub'>" + myArr[i].day + "</h3>";
+      out +=  "</div>";
+      out += "</li>";
+       // out += "<option value ='" + i + "'>" + myArr[i].display + "</option>";
     }
-    out += "</select>";
+   // out += "</select>";
     document.getElementById("id01").innerHTML = out;
 }
 
@@ -57,11 +64,14 @@ function pageLoadCounter() {
     </header>
     <p>Using AJAX and JSON with another file</p>
     <p>I want to use Animation and Transitions to make this look nice</p>
-    <p>Local storage for check-ins with JS onload</p>
-<div id="id01"></div></br>
+    <p>Local storage for check-ins with JS onload</p></br>
 <div id="workoutDay"></div>
 <p>You are on a <span id="counter"></span> check-in streak. Keep it up!</p>
 
+        <div class="content">
+                <ul class="ca-menu" id="id01">
+                </ul>
+        </div><!-- content -->
   </div> <!-- wrapper -->
 </body>
 </html>
