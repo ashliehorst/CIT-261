@@ -5,12 +5,14 @@
   <link href="main.css" rel="stylesheet" type="text/css"> 
   <script>
 var xmlhttp = new XMLHttpRequest();
-var url = "workout.json";
+//var url = "workout.json";
+var url = "portfolio.html";
 var myArr;
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        myArr = JSON.parse(xmlhttp.responseText);
-        myFunction(myArr);
+      document.getElementById("urlDiv").innerHTML=xmlhttp.responseText;
+       // myArr = JSON.parse(xmlhttp.responseText);
+      // myFunction(myArr);
     }
 }
 xmlhttp.open("GET", url, true);
@@ -35,7 +37,8 @@ function workoutChange(value){
 </head>
 <body>
   <div id="wrapper">
-
+    Portfolio should be showing here filled out with the Monday-Saturday AJAX request
+<div id="urlDiv"></div>
 <div id="id01"></div></br>
 <div id="workoutDay"></div>
 
