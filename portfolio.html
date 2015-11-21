@@ -69,7 +69,8 @@ function pageLoadCounter() {
     var retrievedObject = localStorage.getItem('user');
 
     //console.log('retrievedObject: ', JSON.parse(retrievedObject));
-    document.getElementById('userInfo').innerHTML = localStorage.getItem('user.name');
+    var parseUser = JSON.parse(retrievedObject));
+    document.getElementById('userInfo').innerHTML = localStorage.getItem('parseUser.name');
   }
     /*
     if (!localStorage.getItem('loadCounter')) {
