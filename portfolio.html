@@ -54,6 +54,32 @@ function pageLoadCounter() {
     document.getElementById('counter').innerHTML = localStorage.getItem('loadCounter');
   }
   
+  function localStorage() {
+    // if not set, assign them {
+    if (!localStorage.getItem('user')) {
+      var weight = document.getElementById("currWeight").value;
+      var name = document.getElementById("name").value;
+      var user = { 'name': name, 'weight': weight};
+
+      // Put the object into storage
+      localStorage.setItem('user', JSON.stringify(user));
+   }
+  else {
+    // Retrieve the object from storage
+    var retrievedObject = localStorage.getItem('user');
+
+    //console.log('retrievedObject: ', JSON.parse(retrievedObject));
+    document.getElementById('userInfo').innerHTML = localStorage.getItem('user.name');
+  }
+    /*
+    if (!localStorage.getItem('loadCounter')) {
+      localStorage.setItem('loadCounter', 0);
+    }
+    localStorage.setItem('loadCounter', parseInt(localStorage.getItem('loadCounter')) + 1);
+    document.getElementById('counter').innerHTML = localStorage.getItem('loadCounter');
+    */
+  }
+  
   function domManip() {
     var currWeight = document.getElementById("currWeight").value;
     var goalWeight = document.getElementById("goalWeight").value;
@@ -65,7 +91,7 @@ function pageLoadCounter() {
 }
   </script>
 </head>
-<body onload="pageLoadCounter()">
+<body onload="pageLoadCounter(); localStorage()">
   <div id="wrapper">
     <header>
         <h1>Ashlie's Portfolio</h1>
@@ -88,9 +114,12 @@ function pageLoadCounter() {
     <p>Dom manipulation createElement, appendChild, etc.</p><br/>
 <p>You are on a <span id="counter"></span> check-in streak. Keep it up!</p><br/>
 
-Enter Current Weight: <input type="text" id="currWeight"><br>
+<p>Hello <span id="userInfo">new user. Please input your name and weight.</span></p><br/>
+
+Enter Name: <input type="text" id="name"><br>
+Enter Weight: <input type="text" id="currWeight"><br>
 Enter Goal Weight: <input type="text" id="goalWeight"><br>
-<button onclick="domManip()">Submit</button>
+<button onclick="domManip(); localStorage()">Submit</button>
 
   <ul id="myWeightList"></ul><br/>
   <div id="workoutDay"></div><br/>
