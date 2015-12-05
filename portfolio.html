@@ -57,7 +57,6 @@ function pageLoadCounter() {
   function editUser() {
       var weight = document.getElementById("currWeight").value;
       var name = document.getElementById("name").value;
-      alert(weight + " " + name);
       var user = { 'name': name, 'weight': weight};
 
       // Put the object into storage
@@ -71,8 +70,7 @@ function pageLoadCounter() {
     var retrievedObject = localStorage.getItem('user');
 
     var parseUser = JSON.parse(retrievedObject);
-    alert(parseUser.name + " " + parseUser.weight);
-    document.getElementById('userInfo').innerHTML = localStorage.getItem(parseUser.name);
+    document.getElementById('userInfo').innerHTML = parseUser.name + " you are " + parseUser.weight + " lbs";
     }
   }
   
