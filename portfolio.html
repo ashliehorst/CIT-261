@@ -54,31 +54,25 @@ function pageLoadCounter() {
     document.getElementById('counter').innerHTML = localStorage.getItem('loadCounter');
   }
   
-  function localStorage() {
-    // if not set, assign them {
-    if (!localStorage.getItem('user')) {
+  function editUser() {
       var weight = document.getElementById("currWeight").value;
       var name = document.getElementById("name").value;
+      alert(weight + " " + name);
       var user = { 'name': name, 'weight': weight};
 
       // Put the object into storage
       localStorage.setItem('user', JSON.stringify(user));
-   }
-  else {
+  }
+  function localStorage() {
+    if (localStorage.getItem('user')) {
+
     // Retrieve the object from storage
     var retrievedObject = localStorage.getItem('user');
 
-    //console.log('retrievedObject: ', JSON.parse(retrievedObject));
     var parseUser = JSON.parse(retrievedObject));
+    alert(parseUser.name + " " + parseUser.weight);
     document.getElementById('userInfo').innerHTML = localStorage.getItem(parseUser.name);
-  }
-    /*
-    if (!localStorage.getItem('loadCounter')) {
-      localStorage.setItem('loadCounter', 0);
     }
-    localStorage.setItem('loadCounter', parseInt(localStorage.getItem('loadCounter')) + 1);
-    document.getElementById('counter').innerHTML = localStorage.getItem('loadCounter');
-    */
   }
   
   function domManip() {
@@ -92,7 +86,8 @@ function pageLoadCounter() {
 }
   </script>
 </head>
-<body onload="pageLoadCounter()">
+<!--<body onload="pageLoadCounter()">-->
+  <body onload="localStorage()">
   <div id="wrapper">
     <header>
         <h1>Ashlie's Portfolio</h1>
@@ -117,10 +112,9 @@ function pageLoadCounter() {
 
 <p>Hello <span id="userInfo">new user. Please input your name and weight.</span></p><br/>
 
-Enter Name: <input type="text" id="name"><br>
-Enter Weight: <input type="text" id="currWeight"><br>
-Enter Goal Weight: <input type="text" id="goalWeight"><br>
-<button onclick="localStorage()">Submit</button>
+Edit Name: <input type="text" id="name"><br>
+Edit Weight: <input type="text" id="currWeight"><br> 
+<button onclick="editUser()">Edit</button>
 
   <ul id="myWeightList"></ul><br/>
   <div id="workoutDay"></div><br/>
