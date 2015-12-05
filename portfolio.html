@@ -62,8 +62,9 @@ function pageLoadCounter() {
 
       // Put the object into storage
       localStorage.setItem('user', JSON.stringify(user));
+      storage();
   }
-  function localStorage() {
+  function storage() {
     if (localStorage.getItem('user')) {
 
     // Retrieve the object from storage
@@ -87,7 +88,7 @@ function pageLoadCounter() {
   </script>
 </head>
 <!--<body onload="pageLoadCounter()">-->
-  <body onload="localStorage()">
+  <body onload="storage()">
   <div id="wrapper">
     <header>
         <h1>Ashlie's Portfolio</h1>
