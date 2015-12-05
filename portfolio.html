@@ -69,7 +69,7 @@ function pageLoadCounter() {
     // Retrieve the object from storage
     var retrievedObject = localStorage.getItem('user');
 
-    var parseUser = JSON.parse(retrievedObject));
+    var parseUser = JSON.parse(retrievedObject);
     alert(parseUser.name + " " + parseUser.weight);
     document.getElementById('userInfo').innerHTML = localStorage.getItem(parseUser.name);
     }
